@@ -297,7 +297,7 @@ class LanSC2Env(sc2_env.SC2Env):
     self._action_delay_fns = [None]
 
     interface = self._get_interface(
-        agent_interface_format=agent_interface_format, require_raw=visualize)
+        agent_interface_format=agent_interface_format, require_raw=True)
 
     self._launch_remote(host, config_port, race, name, interface,
                         agent_interface_format)

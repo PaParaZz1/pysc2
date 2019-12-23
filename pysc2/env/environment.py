@@ -25,7 +25,7 @@ import six
 
 
 class TimeStep(collections.namedtuple(
-    'TimeStep', ['step_type', 'reward', 'discount', 'observation'])):
+    'TimeStep', ['step_type', 'reward', 'discount', 'observation', 'game_info'])):
   """Returned with every call to `step` and `reset` on an environment.
 
   A `TimeStep` contains the data emitted by an environment at each step of
@@ -159,3 +159,6 @@ class Base(object):  # pytype: disable=ignored-abstractmethod
   def __del__(self):
     self.close()
 
+  @property
+  def unwrapped(self):
+    return self
